@@ -1,14 +1,11 @@
-var ship = document.createElement("img");
-ship.src = "images/ship1.png";
-
 var Player = function()
 {
 	this.x = 0;
 	this.y = 0;
 
 	this.image = document.createElement("img");
-	this.x = 300;
-	this.y = 700;
+	this.x = 0;
+	this.y = 0;
 	this.width = 285;
 	this.height = 400;
 	this.directionX = 0;
