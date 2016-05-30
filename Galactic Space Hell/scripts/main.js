@@ -58,6 +58,7 @@ var speed = 10;
 
 var shoot = false;
 
+var player = new Player();
 var keyboard = new Keyboard();
 
 function run()

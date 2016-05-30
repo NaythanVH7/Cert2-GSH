@@ -27,22 +27,24 @@ var Keyboard = function()
 
 		if(event.keyCode == KEY_UP)
 		{
-			player.directionY = 3;
+			Player.directionY = 3;
+			console.log(Player.positionY);
 		}
 
 		if(event.keyCode == KEY_DOWN)
 		{
-			player.directionY = -3;
+			Player.directionY = -3;
 		}
 
 		if(event.keyCode == KEY_LEFT)
 		{
-			player.directionX = -3;
+			Player.directionX = -3;
+			console.log(Player.positionX)
 		}
 
 		if(event.keyCode == KEY_RIGHT)
 		{
-			player.directionX = 3;
+			Player.directionX = 3;
 		}
 
 		if(event.keyCode == KEY_SPACE && shootTimer <= 0)
@@ -58,22 +60,22 @@ var Keyboard = function()
 
 		if(event.keyCode == KEY_UP)
 		{
-			player.directionY = 0;
+			Player.directionY = 0;
 		}
 
 		if(event.keyCode == KEY_DOWN)
 		{
-			player.directionY = 0;
+			Player.directionY = 0;
 		}
 
 		if(event.keycode == KEY_LEFT)
 		{
-			player.directionX = 0;
+			Player.directionX = 0;
 		}
 
 		if(event.keyCode == KEY_RIGHT)
 		{
-			player.directionX = 0;
+			Player.directionX = 0;
 		}
 	};
 
