@@ -34,12 +34,15 @@ var ASTEROID_SPEED = 1;
 var PLAYER_SPEED = 1;
 var BULLET_SPEED = 1.5;
 
+var fps = 0;
+var fpsCount = 0;
+var fpsTime = 0;
+
 var KEY_SPACE = 32;
 var KEY_LEFT = 37;
 var KEY_UP = 38;
 var KEY_RIGHT = 39;
 var KEY_DOWN = 40;
-
 var KEY_A = 65;
 var KEY_D = 68;
 var KEY_S = 83;
@@ -58,15 +61,52 @@ var speed = 10;
 
 var shoot = false;
 
+var bullets = [];
+
 var player = new Player();
 var keyboard = new Keyboard();
+var bullets = new Bullets();
 
-function run()
+var spacebg = document.createElement("img");
+    spacebg.src = "images/spacebg1.jpg";
+
+var background = [];
+for(var y=0; y<15; y++)
+    {
+        background[y] = [];
+        for(var x=0; x<20; x++)
+            background[y][x] = spacebg;
+    }
+
+function drawBackground()
+{
+    for(var y=0; y<15; y++)
+    {
+        for(var x=0; x<20; x++)
+        {
+            context.drawImage(background[y][x], x*600, y*800);
+        }
+    }
+    context.fillStyle = "#FFFFFF";
+	context.font = "24px Arial";
+	context.fillText("" + score, 10, 30);
+}
+
+function run(deltaTime)
 {
 	context.fillStyle = "#ccc";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
 	var deltaTime = getDeltaTime();
+
+  drawBackground();
+    
+    
+    player.draw();
+    player.update(deltaTime);
+
+    bullets.draw();
+    bullets.update(deltaTime);
 }
 
 //-------------------- Don't modify anything below here

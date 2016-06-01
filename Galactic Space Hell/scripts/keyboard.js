@@ -2,8 +2,8 @@ var Keyboard = function()
 {
 	var self = this;
 
-	window.addEventListener('keydown', function(evt) {self.onKeyDown(evt); }, false);
-	window.addEventListener('keyup', function(evt) {self.onKeyUp(evt); }, false);
+	window.addEventListener('keydown', function(evt) {self.onKeyDown(evt);}, false);
+	window.addEventListener('keyup', function(evt) {self.onKeyUp(evt);}, false);
 
 	this.keyListeners = new Array();
 	this.keys = new Array();
@@ -20,67 +20,19 @@ var Keyboard = function()
 	this.KEY_W = 87;
 	this.KEY_SHIFT = 16;
 	this.KEY_ENTER = 13;
+}
 
 	Keyboard.prototype.onKeyDown = function(evt)
 	{
 		this.keys[evt.keyCode] = true;
-
-		if(event.keyCode == KEY_UP)
-		{
-			Player.directionY = 3;
-			console.log(Player.positionY);
-		}
-
-		if(event.keyCode == KEY_DOWN)
-		{
-			Player.directionY = -3;
-		}
-
-		if(event.keyCode == KEY_LEFT)
-		{
-			Player.directionX = -3;
-			console.log(Player.positionX)
-		}
-
-		if(event.keyCode == KEY_RIGHT)
-		{
-			Player.directionX = 3;
-		}
-
-		if(event.keyCode == KEY_SPACE && shootTimer <= 0)
-		{
-			shootTimer += 0.3;
-			playerShoot();
-		}
 	};
 
 	Keyboard.prototype.onKeyUp = function(evt)
 	{
 		this.keys[evt.keyCode] = false;
-
-		if(event.keyCode == KEY_UP)
-		{
-			Player.directionY = 0;
-		}
-
-		if(event.keyCode == KEY_DOWN)
-		{
-			Player.directionY = 0;
-		}
-
-		if(event.keycode == KEY_LEFT)
-		{
-			Player.directionX = 0;
-		}
-
-		if(event.keyCode == KEY_RIGHT)
-		{
-			Player.directionX = 0;
-		}
 	};
 
 	Keyboard.prototype.isKeyDown = function(keyCode)
 	{
 		return this.keys[keyCode];
 	};
-}
